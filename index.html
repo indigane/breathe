@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Breathe</title>
+    <style>
+      body, html {
+        margin: 0;
+        padding: 0;
+        background: #aaf;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      .outer-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: auto;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .inner-wrapper {
+        position: relative;
+        width: 50vmin;
+        height: 50vmin;
+      }
+      .background-visualization {
+        position: absolute;
+        top: -25%;
+        left: -25%;
+        width: 150%;
+        height: 150%;
+        transform-origin: center;
+        transform: rotate(0deg);
+        animation: 16s ease-in-out 1s infinite normal background-visualization;
+      }
+      @keyframes background-visualization {
+        0% {
+          transform: rotate(0deg);
+          animation-timing-function: ease-out;
+        }
+        25% {
+          transform: rotate(135deg);
+        }
+        50% {
+          transform: rotate(135deg);
+        }
+        75% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+      .background-visualization .circle {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: rotate(0deg);
+        transform-origin: center;
+      }
+      .background-visualization .circle:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50%;
+        transform: translateX(5%);
+        animation: 16s ease-in-out 1s infinite normal background-visualization-circle;
+      }
+      .background-visualization .circle:nth-child(1) {
+        transform: rotate(0deg);
+      }
+      .background-visualization .circle:nth-child(2) {
+        transform: rotate(45deg);
+      }
+      .background-visualization .circle:nth-child(3) {
+        transform: rotate(90deg);
+      }
+      .background-visualization .circle:nth-child(4) {
+        transform: rotate(135deg);
+      }
+      .background-visualization .circle:nth-child(5) {
+        transform: rotate(180deg);
+      }
+      .background-visualization .circle:nth-child(6) {
+        transform: rotate(225deg);
+      }
+      .background-visualization .circle:nth-child(7) {
+        transform: rotate(270deg);
+      }
+      .background-visualization .circle:nth-child(8) {
+        transform: rotate(315deg);
+      }
+      @keyframes background-visualization-circle {
+        0% {
+          transform: translateX(5%);
+          animation-timing-function: ease-out;
+        }
+        25% {
+          transform: translateX(30%);
+        }
+        50% {
+          transform: translateX(30%);
+        }
+        75% {
+          transform: translateX(5%);
+        }
+        100% {
+          transform: translateX(5%);
+        }
+      }
+      .box-visualization {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      .box-visualization .outline {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border: 3px solid #88F;
+        border: 3px solid #aaf;
+        border-radius: 6px;
+      }
+      .box-visualization .marker {
+        position: absolute;
+        margin-top: 1.5px;
+        margin-left: 1.5px;
+        top: -5%;
+        left: -5%;
+        width: 10%;
+        height: 10%;
+        background: #aaf;
+        border-radius: 50%;
+        transform-origin: center;
+        transform: translate(0%, calc(1000% - 3px));
+        animation: 16s linear 1s infinite normal box-visualization-marker;
+      }
+      @keyframes box-visualization-marker {
+        0% {
+          transform: translate(0%, calc(1000% - 3px));
+        }
+        25% {
+          transform: translate(0%, 0%);
+        }
+        50% {
+          transform: translate(calc(1000% - 3px), 0%);
+        }
+        75% {
+          transform: translate(calc(1000% - 3px), calc(1000% - 3px));
+        }
+        100% {
+          transform: translate(0%, calc(1000% - 3px));
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer-wrapper">
+      <div class="inner-wrapper">
+        <div class="background-visualization">
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+          <div class="circle"></div>
+        </div>
+        <div class="box-visualization">
+          <div class="outline"></div>
+          <div class="marker"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
