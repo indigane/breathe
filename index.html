@@ -47,6 +47,27 @@
         position: relative;
         width: 50vmin;
         height: 50vmin;
+        animation: calc(var(--total-duration) * 4) ease-in-out var(--initial-delay) infinite normal timer-indicator;
+      }
+      @keyframes timer-indicator {
+        0% {
+          opacity: 1;
+        }
+        /* calc(61 / 64 * 100%) */
+        95.3125% {
+          opacity: 1;
+        }
+        /* calc(62 / 64 * 100%) */
+        96.875% {
+          opacity: 0.5;
+        }
+        /* calc(63 / 64 * 100%) */
+        98.4375% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 1;
+        }
       }
       .background-visualization {
         position: absolute;
